@@ -16,10 +16,10 @@ const Sidebar = () => {
          <div className="flex size-full flex-col gap-4">
             <Link href="/" className="sidebar-logo">
                <Image 
-                  src="/assets/images/logo-text.svg"
+                  src="/assets/images/mylogo.png"
                   alt="logo"
                   width={180}
-                  height={28}
+                  height={25}
                />
             </Link>
 

@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache";
 import User from "../database/models/user.model";
 import { connectToDatabase } from "../database/mongoose";
 import { handleError } from "../utils";
+import logger from "@/utils/logger";
 
 // CREATE
 export async function createUser(user: CreateUserParams) {
@@ -13,9 +14,12 @@ export async function createUser(user: CreateUserParams) {
 
       const newUser = await User.create(user);
 
+      logger.info(`User created: ${JSON.stringify(newUser)}`);
+      
       return JSON.parse(JSON.stringify(newUser));
    } catch (error) {
       handleError(error);
+      logger.error("Error creating user :", error);
    }
 }
 
@@ -40,7 +44,7 @@ export async function updateUser(clerkId: string, user: UpdateUserParams) {
       await connectToDatabase();
 
       const updatedUser = await User.findOneAndUpdate({ clerkId }, user, {
-      new: true,
+         new: true,
       });
 
       if (!updatedUser) throw new Error("User update failed");

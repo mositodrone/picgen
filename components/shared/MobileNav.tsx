@@ -19,10 +19,10 @@ const pathname = usePathname();
       <header className="header">
          <Link href="/" className="flex items-center gap-2 md:py2">
             <Image 
-               src="/assets/images/logo-text.svg"
+               src="/assets/images/mylogo.png"
                alt="logo"
                width={180}
-               height={28}
+               height={25}
             />
          </Link>
 
@@ -43,7 +43,7 @@ const pathname = usePathname();
                   <SheetContent className="sheet-content sm:w-64">
                      <>
                         <Image 
-                           src="/assets/images/logo-text.svg"
+                           src="/assets/images/mylogo.png"
                            alt="logo"
                            width={152}
                            height={23}
