@@ -186,7 +186,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        {creditBalance < creditFee && <InsufficientCreditsModal />}
+        {creditBalance < 1 && <InsufficientCreditsModal />}
         <CustomField 
           control={form.control}
           name="title"
